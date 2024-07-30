@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <h1 id="page">Sticker Info</h1>
+        <div id="dataDisplay">
+            <!-- JSON data will be displayed here -->
+        </div>
+        <script>
+            var value = localStorage.getItem("img");
+            document.getElementById("page").innerHTML = value;
+            function fetchJSONData() {
+            fetch("StickerInfo.json")
+                .then((res) => {
+                    if (!res.ok) {
+                        throw new Error
+                            (`HTTP error! Status: ${res.status}`);
+                    }
+                    return res.json();
+                })
+                .then((data) => {
+                    console.log(data.Sticker[1].info.Descript);})
+                .catch((error) => 
+                       console.error("Unable to fetch data:", error));
+            }
+
+             fetchJSONData();
+        </script>
+    </body>
+</html>

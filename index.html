@@ -68,7 +68,7 @@
 </head>
 <body>
 <div class="main_visual">
-  <div class="flicking_con">
+  <div class="flicking_con" style="border: 2px solid blue;">
   <a class="on" href="#@">1</a>
   <a href="#@">2</a>
   <a href="#@">3</a>
@@ -76,19 +76,24 @@
   </div>
   <div class="main_image">
     <ul>
-      <li> <img src="images/1-02.png"></li>
-      <li> <img src="images/1-03.png"></li>
-      <li> <img src="images/1-04.png"></li>
-      <li> <img src="images/1-05.png"></li>
+        <li><div id="img1"></div></li>
+        <li><div id="img2"></div></li>
+        <li><div id="img3"></div></li>
+        <li><div id="img4"></div></li>
     </ul>
   </div>
   <script>
+    $("#img1").load("stickers1.html");
+    $("#img2").load("stickers2.html");
+    $("#img3").load("stickers3.html");
+    $("#img4").load("stickers4.html");
+
     $(".main_image img").each(function () {
         var ww = $(".main_image").width();
         var w = $(this).width();
         var ml = Math.round((parseInt(ww) - parseInt(w)) / 2);
-        $(this).css({ marginLeft: ml + "px" })
-    })
+        $(this).css({ marginLeft: ml + "px" });
+    });
     </script> 
     </div>
 </div>

@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0,user-scalable=no">
+<title>Stickers</title>
+<link href="css/sytyle.css" rel="stylesheet">
+</head>
+<body>
+<div class="main_visual">
+  <div class="main_image" style="border: 5px solid yellow;">
+    <img id="img1" onclick="showInfo()" src="images/Sticker1/A1 (1).png" style="border: 1px solid blue;height: 91px;position: absolute;">
+    <img src="images/1-02.png" id="bg" style="height: 550px;margin: 0 auto;display: block;">
+  </div>
+</div>
+<script>
+
+  setPosition();
+
+  window.onresize = function() {
+    setPosition();
+  };
+  function setPosition(){
+    let width = window.innerWidth;
+    let height = window.innerHeight;
+    document.getElementById('img1').style.left = (width/2-20)+"px";
+    document.getElementById('img1').style.top = (height/2+110)+"px";
+  }
+
+  function showInfo(){
+    localStorage.setItem("img","A1(1)");
+    location.href = "sub_sticker_info.html";
+  }
+</script>
+</body>
+</html>
