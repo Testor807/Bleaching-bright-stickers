@@ -19,11 +19,14 @@
                     return res.json();
                 })
                 .then((data) => {
-                    console.log(data.Sticker[1].info.Descript);})
+                    //console.log(data.Sticker[1].info.Descript);})
+                    document.getElementById("page").innerHTML = "<table style='border:1px solid black;width:100px;height:100px;'><tr><td>Img</td></tr></table>"
+                    document.getElementById("page").innerHTML += "Title: <br />";
+                    document.getElementById("page").innerHTML += "Painter:"+data.Sticker[1].info.painter+"<br />";
+                    document.getElementById("page").innerHTML += "Descript:"+data.Sticker[1].info.Descript+"<br />";})
                 .catch((error) => 
                        console.error("Unable to fetch data:", error));
             }
-
              fetchJSONData();
         </script>
     </body>

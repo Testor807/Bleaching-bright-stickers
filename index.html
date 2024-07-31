@@ -67,35 +67,36 @@
 </script>
 </head>
 <body>
-<div class="main_visual">
-  <div class="flicking_con" style="border: 2px solid blue;">
-  <a class="on" href="#@">1</a>
-  <a href="#@">2</a>
-  <a href="#@">3</a>
-  <a href="#@">4</a>
-  </div>
+<div class="main_visual" style="border: 3px solid yellow;">
   <div class="main_image">
     <ul>
-        <li><div id="img1"></div></li>
-        <li><div id="img2"></div></li>
-        <li><div id="img3"></div></li>
-        <li><div id="img4"></div></li>
+        <li><div id="sticker1">
+            <img id="img1" onclick="showInfo()" src="images/Sticker1/A1 (1).png" style="border: 1px solid blue;height: 91px;position: absolute;">
+            <img src="images/1-02.png" style="height: 550px;margin: 0 auto;display: block;"></img>
+        </div></li>
+        <li><div id="sticker2"><img src="images/1-03.png" style="height: 550px;margin: 0 auto;display: block;"></div></li>
+        <li><div id="sticker3"><img src="images/1-04.png" style="height: 550px;margin: 0 auto;display: block;"></div></li>
+        <li><div id="sticker4"><img src="images/1-05.png" style="height: 550px;margin: 0 auto;display: block;"></div></li>
     </ul>
   </div>
-  <script>
-    $("#img1").load("stickers1.html");
-    $("#img2").load("stickers2.html");
-    $("#img3").load("stickers3.html");
-    $("#img4").load("stickers4.html");
-
-    $(".main_image img").each(function () {
-        var ww = $(".main_image").width();
-        var w = $(this).width();
-        var ml = Math.round((parseInt(ww) - parseInt(w)) / 2);
-        $(this).css({ marginLeft: ml + "px" });
-    });
-    </script> 
     </div>
 </div>
+<div style="border: 2px solid blue;height: 80px;">
+    <div class="flicking_con" id="bar" style="border: 2px solid blue;top:570px">
+      <a class="on" href="#@">1</a>
+      <a href="#@">2</a>
+      <a href="#@">3</a>
+      <a href="#@">4</a>
+    </div>
+</div>
+<script>
+    $("#img1").css("left",($(window).width()/2-20)+"px");
+    $("#img1").css("top",($(window).height()/2+110)+"px");
+
+    function showInfo(){
+    localStorage.setItem("img","A1(1)");
+    location.href = "sub_sticker_info.html";
+  }
+</script>
 </body>
 </html>
