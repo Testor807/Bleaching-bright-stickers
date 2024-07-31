@@ -71,7 +71,7 @@
   <div class="main_image">
     <ul>
         <li><div id="sticker1">
-            <img id="img1" onclick="showInfo()" src="images/Sticker1/A1 (1).png" style="border: 1px solid blue;height: 91px;position: absolute;">
+            <img id="img1" onclick="showInfo()" src="images/Sticker1/A1 (1).png" style="height: 91px;border: 1px solid blue;position: absolute;">
             <img src="images/1-02.png" style="height: 550px;margin: 0 auto;display: block;"></img>
         </div></li>
         <li><div id="sticker2"><img src="images/1-03.png" style="height: 550px;margin: 0 auto;display: block;"></div></li>
@@ -92,7 +92,10 @@
 <script>
     $("#img1").css("left",($(window).width()/2-20)+"px");
     $("#img1").css("top",($(window).height()/2+110)+"px");
-
+    window.onresize = function() {
+        $("#img1").css("left",($(window).width()/2-20)+"px");
+        $("#img1").css("top",($(window).height()/2+110)+"px");
+    };
     function showInfo(){
     localStorage.setItem("img","A1(1)");
     location.href = "sub_sticker_info.html";
